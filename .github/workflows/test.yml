@@ -16,6 +16,7 @@ jobs:
 
       - uses: conda-incubator/setup-miniconda@v2
         with:
+          channels: conda-forge,kwelsh-lanl,defaults
           activate-environment: anaconda-client-env
           environment-file: environment.yml
           auto-activate-base: false
