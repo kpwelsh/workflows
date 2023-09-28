@@ -19,15 +19,15 @@ jobs:
 
       - uses: conda-incubator/setup-miniconda@v2
         with:
+          mamba-version: "*"
           channels: conda-forge,kwelsh-lanl,defaults
-          activate-environment: anaconda-client-env
-          environment-file: environment.yml
-          auto-activate-base: false
+          activate-environment: fierro-env
+          auto-activate-base: true
           use-only-tar-bz2: true
       
       - name: check solution
         run: |
-          conda env export
+          mamba create -y --name fierro fierro-cpu
 
       - name: test fierro
         run: |

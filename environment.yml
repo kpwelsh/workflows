@@ -1,7 +1,0 @@
-name: anaconda-client-env
-channels:
-  - conda-forge
-  - kwelsh-lanl
-  - defaults
-dependencies:
-  - fierro-cpu
