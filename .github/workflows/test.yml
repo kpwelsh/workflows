@@ -22,7 +22,7 @@ jobs:
       
       - name: check solution
         run: |
-          mamba env export
+          conda env export
 
       - name: test fierro
         run: |
