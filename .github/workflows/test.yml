@@ -10,6 +10,9 @@ jobs:
   test-run-thing:
     name: Doesn't do anything
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,6 +23,7 @@ jobs:
           activate-environment: anaconda-client-env
           environment-file: environment.yml
           auto-activate-base: false
+          use-only-tar-bz2: true
       
       - name: check solution
         run: |
