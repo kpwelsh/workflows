@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   test-run-thing:
-    name: Doesn't do anything
+    name: Install fierro-cpu from conda
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -20,12 +20,12 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           channels: conda-forge,kwelsh-lanl,defaults
-          activate-environment: fierro-env
           auto-activate-base: false
       
       - name: check solution
         run: |
-          conda create -y --name fierro fierro-cpu -c conda-forge -c kwelsh-lanl
+          conda create -y --name fierro-env fierro-cpu -c conda-forge -c kwelsh-lanl
+          conda activate fierro-env
 
       - name: test fierro
         run: |
