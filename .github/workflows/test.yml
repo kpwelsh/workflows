@@ -22,10 +22,11 @@ jobs:
           channels: conda-forge,kwelsh-lanl,defaults
           auto-activate-base: false
       
-      - name: check solution
-        run: |
-          conda create -y --name fierro-env fierro-cpu -c conda-forge -c kwelsh-lanl
-          conda activate fierro-env
+      - name: create environment
+        run: conda create -y --name fierro-env fierro-cpu
+      
+      - name: activate environment
+        run: conda activate fierro-env
 
       - name: test fierro
         run: |
