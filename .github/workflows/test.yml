@@ -26,7 +26,7 @@ jobs:
       
       - name: check solution
         run: |
-          conda create -y --name fierro fierro-cpu
+          conda create -y --name fierro fierro-cpu -c conda-forge -c kwelsh-lanl
 
       - name: test fierro
         run: |
