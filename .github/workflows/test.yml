@@ -22,7 +22,6 @@ jobs:
           channels: conda-forge,kwelsh-lanl,defaults
           activate-environment: fierro-env
           auto-activate-base: false
-          use-only-tar-bz2: true
       
       - name: check solution
         run: |
