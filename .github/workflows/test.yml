@@ -28,6 +28,11 @@ jobs:
       - name: activate environment
         run: conda activate fierro-env
 
+      - name: export the modules
+        run: |
+          conda env export
+          find /usr/share/miniconda/envs/fierro-env -name fierro*
+
       - name: test fierro
         run: |
           which fierro
