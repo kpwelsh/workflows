@@ -22,12 +22,6 @@ jobs:
           activate-environment: build-env
           use-mamba: true
 
-      - uses: conda-incubator/setup-miniconda@v2
-        with:
-          miniconda-version: latest
-          activate-environment: build-env
-          environment-file: .etc/conda_build_environment.yaml
-
       - name: Get Date
         id: get-date
         run: echo "today=$(/bin/date -u '+%Y%m%d')" >> $GITHUB_OUTPUT
