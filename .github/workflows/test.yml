@@ -32,15 +32,14 @@ jobs:
         with:
           path: ${{ env.CONDA }}/envs
           key:
-            conda-${{ runner.os }}--${{ runner.arch }}--${{ steps.get-date.outputs.today }}-${{ hashFiles('.etc/conda_build_environment.yml') }}-${{ env.CACHE_NUMBER }}
+            conda-${{ runner.os }}--${{ runner.arch }}--${{ steps.get-date.outputs.today }}-${{ hashFiles('.etc/conda_build_environment.yaml') }}-${{ env.CACHE_NUMBER }}
         env:
-          # Increase this value to reset cache if etc/example-environment.yml has not changed
           CACHE_NUMBER: 0
         id: cache
 
       - name: Update environment
         run:
-          mamba env update -n build-env -f .etc/conda_build_environment.yml
+          mamba env update -n build-env -f .etc/conda_build_environment.yaml
         if: steps.cache.outputs.cache-hit != 'true'
         
       - run: |
