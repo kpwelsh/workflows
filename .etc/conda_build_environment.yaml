@@ -1,0 +1,6 @@
+name: build-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - conda-build # For building

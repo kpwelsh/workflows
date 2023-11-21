@@ -1,0 +1,10 @@
+package: 
+  name: test-osx-arm64
+  version: 1
+
+source:
+  path: ../
+requirements:
+  build:
+    - cmake >=3.17.0
+    - {{ compiler('cxx') }}
