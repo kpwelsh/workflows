@@ -3,8 +3,17 @@ package:
   version: 1
 
 source:
-  path: ../
+  git_url: https://github.com/icl-utk-edu/heffte.git
+  git_depth: 1
+
 requirements:
   build:
     - cmake >=3.17.0
     - {{ compiler('cxx') }}
+    - openmpi
+  host:
+    - openmpi
+    - fftw
+  run:
+    - openmpi
+    - fftw
